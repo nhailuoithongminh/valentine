@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+
+body {
+  background: #00BCFF;
+  font-family: 'Chewy', cursive;
+  color: #504747;
+}
+
+#container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#text-wrapper {
+  text-align: center;
+}

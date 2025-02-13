@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Audio Visualizer</title>
+    <script type="module" crossorigin src="/assets/index.20376cc9.js"></script>
+    <link rel="stylesheet" href="/assets/index.543a4430.css">
+    <script>
+      function goToLocXoay() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "block";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToBo() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "block";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToHop() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "block";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToTrung() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "block";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToCay() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "block";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToHeart() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        document.getElementById("heart").style.display = "block";
+        document.getElementById("heart2").style.display = "none";
+      }
+
+      function goToHeart2() {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "block";
+      }
+
+      function goToApp() {
+        document.getElementById("app").style.display = "block";
+        document.getElementById("locxoay").style.display = "none";
+        document.getElementById("bo").style.display = "none";
+        document.getElementById("hop").style.display = "none";
+        document.getElementById("trung").style.display = "none";
+        
+        document.getElementById("cay").style.display = "none";
+        
+        document.getElementById("heart2").style.display = "none";
+      }
+    </script>
+    <style>
+      .floating-controls {
+        position: fixed;
+        top: 10px;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 90vw;
+      }
+
+      .floating-controls button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        background: linear-gradient(145deg, #ff6b6b, #ff8e8e);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .floating-controls button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+      }
+
+      .floating-controls button:active {
+        transform: translateY(0);
+      }
+
+      #fileIn {
+        padding: 8px;
+        border-radius: 25px;
+        border: 2px solid #ff6b6b;
+      }
+
+      iframe {
+        border: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="floating-controls">
+      <input type="file" id="fileIn" style="width: 3rem;" />
+      <button id="load-default">P</button>
+      <button onclick="goToApp()">H</button>
+      <button onclick="goToLocXoay()">U</button>
+      <button onclick="goToBo()">C</button>
+      <button onclick="goToHop()">L</button>
+      <button onclick="goToTrung()">O</button>
+      <button onclick="goToCay()">I</button>
+      <button onclick="goToHeart2()">💗</button>
+      <button><a href="./gapthu.html" target="_blank" style="text-decoration:none; color:white;">💗</a></button>
+    </div>
+
+    <div id="app">
+      <canvas id="app_view"></canvas>
+    </div>
+    <iframe width="100%" height="100%" id="locxoay" src="locxoay.html" style="display: none;"></iframe>
+    <iframe width="100%" height="100%" id="bo" src="bo.html" style="display: none;"></iframe>
+    <iframe width="100%" height="100%" id="hop" src="hop.html" style="display: none;"></iframe>
+    <iframe width="100%" height="100%" id="trung" src="trung.html" style="display: none;"></iframe>
+    <iframe width="100%" height="100%" id="cay" src="cay.html" style="display: none;"></iframe>
+    <iframe width="100%" height="100%" id="heart2" src="heart2.html" style="display: none;"></iframe>
+  </body>
+</html>
